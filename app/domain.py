@@ -1,0 +1,156 @@
+"""Constantes y etiquetas del dominio."""
+from __future__ import annotations
+
+ITEM_REUSABLE = "REUSABLE"
+ITEM_CONSUMABLE = "CONSUMABLE"
+ITEM_TYPES = {
+    ITEM_REUSABLE: "Reutilizable",
+    ITEM_CONSUMABLE: "Consumible",
+}
+
+STATE_AVAILABLE = "AVAILABLE"
+STATE_ASSIGNED = "ASSIGNED"
+STATE_REPAIR = "REPAIR"
+STATE_DAMAGED = "DAMAGED"
+STATE_LOST = "LOST"
+STATE_OUT_OF_SERVICE = "OUT_OF_SERVICE"
+
+STATE_LABELS = {
+    STATE_AVAILABLE: "Disponible en stock",
+    STATE_ASSIGNED: "Entregado a cuadrillas",
+    STATE_REPAIR: "En reparacion",
+    STATE_DAMAGED: "Dañado",
+    STATE_LOST: "Extraviado",
+    STATE_OUT_OF_SERVICE: "Fuera de servicio",
+}
+
+STATE_FIELDS = {
+    STATE_AVAILABLE: "qty_available",
+    STATE_ASSIGNED: "qty_assigned",
+    STATE_REPAIR: "qty_repair",
+    STATE_DAMAGED: "qty_damaged",
+    STATE_LOST: "qty_lost",
+    STATE_OUT_OF_SERVICE: "qty_out_of_service",
+}
+
+MANUAL_STATES = [
+    STATE_AVAILABLE,
+    STATE_REPAIR,
+    STATE_DAMAGED,
+    STATE_LOST,
+    STATE_OUT_OF_SERVICE,
+]
+
+CONDITION_GOOD = "GOOD"
+CONDITION_DAMAGED = "DAMAGED"
+CONDITION_REPAIR = "REPAIR"
+CONDITION_OUT_OF_SERVICE = "OUT_OF_SERVICE"
+CONDITIONS = {
+    CONDITION_GOOD: "Buen estado",
+    CONDITION_DAMAGED: "Dañado",
+    CONDITION_REPAIR: "Requiere reparacion",
+    CONDITION_OUT_OF_SERVICE: "Fuera de servicio",
+}
+CONDITION_TO_STATE = {
+    CONDITION_GOOD: STATE_AVAILABLE,
+    CONDITION_DAMAGED: STATE_DAMAGED,
+    CONDITION_REPAIR: STATE_REPAIR,
+    CONDITION_OUT_OF_SERVICE: STATE_OUT_OF_SERVICE,
+}
+
+DELIVERY_ACTIVE = "ACTIVE"
+DELIVERY_VOIDED = "VOIDED"
+
+ICLASS_PENDING = "PENDING"
+ICLASS_LOADED = "LOADED"
+ICLASS_STATUSES = {
+    ICLASS_PENDING: "Pendiente de IClass",
+    ICLASS_LOADED: "Cargada en IClass",
+}
+
+COUNT_DRAFT = "DRAFT"
+COUNT_CONFIRMED = "CONFIRMED"
+COUNT_STATUSES = {
+    COUNT_DRAFT: "Borrador",
+    COUNT_CONFIRMED: "Confirmado",
+}
+
+MOVE_INCOME = "INCOME"
+MOVE_DELIVERY = "DELIVERY"
+MOVE_RETURN = "RETURN"
+MOVE_ADJUSTMENT = "ADJUSTMENT"
+MOVE_WRITE_OFF = "WRITE_OFF"
+MOVE_STATE_CHANGE = "STATE_CHANGE"
+MOVE_VOID_INCOME = "VOID_INCOME"
+MOVE_VOID_DELIVERY = "VOID_DELIVERY"
+MOVE_VOID_RETURN = "VOID_RETURN"
+MOVE_VOID_WRITE_OFF = "VOID_WRITE_OFF"
+MOVE_VOID_STATE_CHANGE = "VOID_STATE_CHANGE"
+
+MOVEMENT_TYPES = {
+    MOVE_INCOME: "Ingreso de stock",
+    MOVE_DELIVERY: "Entrega a cuadrilla",
+    MOVE_RETURN: "Devolucion",
+    MOVE_ADJUSTMENT: "Ajuste de inventario",
+    MOVE_WRITE_OFF: "Baja de material",
+    MOVE_STATE_CHANGE: "Cambio de estado",
+    MOVE_VOID_INCOME: "Anulacion de ingreso",
+    MOVE_VOID_DELIVERY: "Anulacion de entrega",
+    MOVE_VOID_RETURN: "Anulacion de devolucion",
+    MOVE_VOID_WRITE_OFF: "Anulacion de baja",
+    MOVE_VOID_STATE_CHANGE: "Anulacion de cambio de estado",
+}
+VOID_RELATED_TYPES = {
+    MOVE_INCOME: MOVE_VOID_INCOME,
+    MOVE_DELIVERY: MOVE_VOID_DELIVERY,
+    MOVE_RETURN: MOVE_VOID_RETURN,
+    MOVE_WRITE_OFF: MOVE_VOID_WRITE_OFF,
+    MOVE_STATE_CHANGE: MOVE_VOID_STATE_CHANGE,
+}
+
+ADJUSTMENT_INCOME = "INCOME"
+ADJUSTMENT_WRITE_OFF = "WRITE_OFF"
+ADJUSTMENT_STATE = "STATE_CHANGE"
+ADJUSTMENT_COUNT = "COUNT"
+
+ICLASS_ACTION_CREATED = "CREATED"
+ICLASS_ACTION_LOADED = "LOADED"
+ICLASS_ACTION_REVERTED = "REVERTED"
+ICLASS_ACTIONS = {
+    ICLASS_ACTION_CREATED: "Entrega registrada",
+    ICLASS_ACTION_LOADED: "Marcada como cargada",
+    ICLASS_ACTION_REVERTED: "Marca revertida",
+}
+
+BACKUP_MANUAL = "MANUAL"
+BACKUP_AUTOMATIC = "AUTOMATIC"
+BACKUP_PRE_RESTORE = "PRE_RESTORE"
+BACKUP_KINDS = {
+    BACKUP_MANUAL: "Manual",
+    BACKUP_AUTOMATIC: "Automatica",
+    BACKUP_PRE_RESTORE: "Previa a restauracion",
+}
+
+DEFAULT_CATEGORIES = [
+    "Routers",
+    "ONUs",
+    "Equipos CATV",
+    "Herramientas",
+    "Fuentes de alimentacion",
+    "Materiales de instalacion",
+    "Conectores",
+    "Cables",
+    "Equipos de medicion",
+    "Repuestos",
+    "Otros",
+]
+
+DEFAULT_CREWS = [
+    "Cuadrilla 1",
+    "Cuadrilla 2",
+    "Cuadrilla 3",
+    "Cuadrilla 4",
+    "Cuadrilla 5",
+    "Cuadrilla 7",
+    "Cuadrilla 10",
+]
